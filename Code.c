@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<ctype.h>
 #define T 50
 char senha (char senha);
 int main () {
@@ -25,6 +26,7 @@ int main () {
 	while(x==0)
 		x=senha(password);
     letra[T-1]='\0';
+	password[T-1]='\0';
     printf("\n");
     printf("Ola, %s!\n", letra);
 	printf("Sua senha eh %s\n", password);
@@ -32,18 +34,26 @@ int main () {
     return 0;
 }
 char senha (char password[T]){
-    int i;
+    int i,x;
 	char aux;
-    printf("Digite sua senha?\n");
-    for(i=0;i<T-1;i++){
+    printf("\nDigite sua senha?\n");
+    for(i=0;i==i;i++){
 		if(i<T-1){
             password[i]=getch();
-            printf("*");
-            if(password[i]==13){
+			x=isalnum(password[i]);
+			if(x!=0)
+				printf("*");
+			else{
+				if(password[i]==13){
                 password[i]='\0';
 				return 1;
                 break;
             }
+				if(x==0){
+					printf("Digite apenas letras e numeros\n");
+					i=-1;
+				}
+			}
 		}
 		else{
 			aux = getch();

@@ -7,15 +7,15 @@ int main () {
     char letra[T], aux;
     int i;
     printf("Qual seu nome?\n");
-    for(i=0;i==i;i++){
-        if(i<T-1){
+    for(i=0;i==i;i++){//Loop infinito
+        if(i<T-1){//Armazena até o limite do vetor
             letra[i]=getche();
-            if(letra[i]==13){
+            if(letra[i]==13){//Permite armazenar até o enter ser pressionado
                 letra[i]='\0';
                 break;
             }
         }
-        else{
+        else{//Joga o que for digitado a mais para qualquer lugar, não armazenando nada.
             aux = getch();
             if(aux==13)
                 break;

@@ -2,10 +2,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define T 21
+#define T 50
+char senha (char senha);
 int main () {
-    char letra[T], aux;
-    int i;
+    char password[T], letra[T], aux;
+    int i, x=0;
     printf("Qual seu nome?\n");
     for(i=0;i==i;i++){//Loop infinito
         if(i<T-1){//Armazena até o limite do vetor
@@ -21,9 +22,35 @@ int main () {
                 break;
         }
     }
+	while(x==0)
+		x=senha(password);
     letra[T-1]='\0';
     printf("\n");
     printf("Ola, %s!\n", letra);
+	printf("Sua senha eh %s\n", password);
     system("pause");
     return 0;
+}
+char senha (char password[T]){
+    int i;
+	char aux;
+    printf("Digite sua senha?\n");
+    for(i=0;i<T-1;i++){
+		if(i<T-1){
+            password[i]=getch();
+            printf("*");
+            if(password[i]==13){
+                password[i]='\0';
+				return 1;
+                break;
+            }
+		}
+		else{
+			aux = getch();
+			if(aux==13)
+				break;
+		}
+	}
+    password[i]='\0';
+    printf("\n");
 }

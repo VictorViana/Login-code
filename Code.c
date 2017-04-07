@@ -17,7 +17,7 @@ int main () {
         }
         else{//Joga o que for digitado a mais para qualquer lugar, não armazenando nada.
             aux = getch();
-            if(aux==13)
+            if(aux==13)////Permite digitar até o enter ser pressionado
                 break;
         }
     }

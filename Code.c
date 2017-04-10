@@ -4,7 +4,7 @@
 #include<string.h>
 #include<ctype.h>
 #define T 50
-char senha (char senha);
+char senha (char password[]);
 int main () {
     char password[T], letra[T], aux;
     int i, x=0;
@@ -33,7 +33,7 @@ int main () {
     system("pause");
     return 0;
 }
-char senha (char password[T]){
+char senha (char password[]){
     int i,x;
 	char aux;
     printf("\nDigite sua senha?\n");

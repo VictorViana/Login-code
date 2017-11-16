@@ -45,10 +45,10 @@ char senha (char password[]){
 				printf("*");
 			else{
 				if(password[i]==13){
-                password[i]='\0';
-				return 1;
-                break;
-            }
+					password[i]='\0';
+					return 1;
+					break;
+				}
 				if(x==0){
 					printf("Digite apenas letras e numeros\n");
 					i=-1;
